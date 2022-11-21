@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Hed mit Imports und Titel -->
     <meta charset="UTF-8">
     <link href="https://unpkg.com/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <title>ToDoList</title>
+    <!-- Styles -->
+    <style>
+    .sidebarHauptelement {
+        color: dodgerblue;
+        }
+    .sidebarUnterelement{
+        color: dodgerblue;
+        margin-left: 2em;
+    }
+    </style>
 </head>
-<body>
 
+<body>
+<!-- Oberster Div Container mit Text -->
 <div class="container">
     <div class="text-center bg-light mt-3 mb-3 p-5">
         <h1>Aufgabenplaner: Todos (Aktuelles Projekt)</h1>
     </div>
-
+    <!-- Row Container mit Liste & Cards -->
     <div class="row">
+        <!-- Col mit Liste -->
         <div class="col-2">
-            hier menü
+            <ul class="list-group">
+                <li class="list-group-item sidebarHauptelement"> Login </li>
+                <li class="list-group-item sidebarHauptelement"> Projekte </li>
+                <li class="list-group-item sidebarHauptelement"> Aktuelles Projekt </li>
+                <li class="list-group-item sidebarUnterelement"> Reiter </li>
+                <li class="list-group-item sidebarUnterelement"> Aufgaben </li>
+                <li class="list-group-item sidebarUnterelement"> Mitglieder </li>
+            </ul>
         </div>
+        <!-- Col mit Card 1 -->
         <div class="col">
             <div class="card">
                 <div class="card-header">ToDo:</div>
@@ -25,6 +46,7 @@
                     </ul>
             </div>
         </div>
+        <!-- Col mit Card 2 -->
         <div class="col">
             <div class="card">
                 <div class="card-header">Erledigt:</div>
@@ -33,6 +55,7 @@
                     </ul>
             </div>
         </div>
+        <!-- Col mit Card 3 -->
         <div class="col">
             <div class="card">
                 <div class="card-header">Verschoben:</div>
@@ -43,9 +66,6 @@
             </div>
         </div>
     </div>
-
-
 </div>
-
 </body>
 </html>
