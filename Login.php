@@ -15,18 +15,13 @@
     </div>
     <!-- Oberster Row Container -->
     <div class="row pt-3">
-
         <!-- Col -->
         <div class="col-lg-3 p-3"></div>
-
         <div class="col">
-
             <!-- Row -->
             <div class="row">
-
                 <!-- Login -->
                 <div class="col p-3">
-
                     <form>
                         <div class="mb-3">
                             <label for="email" class="form-label">E-Mail Adresse</label>
@@ -42,20 +37,13 @@
                         </div>
                         <button type="submit" class="btn btn-primary" id="loginSubmit" name="loginSubmit">Einloggen</button>
                     </form>
-
-                    <p>
-                        Noch nicht registriert? <a href="" style="text-decoration: none">Registrierung</a>
-                    </p>
-
-                    <p>
-                        Da der Login Vorgang technisch noch nicht realisiert wurde: <a href="index.php" style="text-decoration: none">Überspringen</a>
-                    </p>
-
-                </div>
-
-            </div>
+                <p>
+                    Noch nicht registriert? <a href="" style="text-decoration: none">Registrierung</a>
+                </p>
+                <p>
+                    Da der Login Vorgang technisch noch nicht realisiert wurde: <a href="ToDoList.php" style="text-decoration: none">Zur ToDoListe</a>
+                </p>
         </div>
-        <div class="col-lg-3 p-3"></div>
     </div>
 </div>
 </body>
