@@ -1,5 +1,5 @@
 <?php
-$mitglieder = array(
+$personen = array(
     array(
         'id' => '0',
         'name' => 'Simon Szulik',
@@ -56,7 +56,7 @@ $mitglieder = array(
                     </thead>
                     <!-- Inhalt der Tabelle mit Hilfe von Array -->
                     <tbody>
-                    <?php if (isset($mitglieder)): foreach ($mitglieder as $item): ?>
+                    <?php if (isset($personen)): foreach ($personen as $item): ?>
                         <tr>
                             <td><?= isset($item['name']) ? $item['name'] : '' ?></td>
                             <td><?= isset($item['email']) ? $item['email'] : '' ?></td>
