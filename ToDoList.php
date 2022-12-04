@@ -1,20 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Hed mit Imports und Titel -->
+    <!-- Head mit Imports und Titel -->
     <meta charset="UTF-8">
     <link href="https://unpkg.com/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <title>ToDoList</title>
-    <!-- Styles -->
-    <style>
-    .sidebarHauptelement {
-        color: dodgerblue;
-        }
-    .sidebarUnterelement{
-        color: dodgerblue;
-        margin-left: 2em;
-    }
-    </style>
 </head>
 
 <body>
@@ -23,18 +13,12 @@
     <div class="text-center bg-light mt-3 mb-3 p-5">
         <h1>Aufgabenplaner: Todos (Aktuelles Projekt)</h1>
     </div>
-    <!-- Row Container mit Liste & Cards -->
+    <!-- Row Container mit Menü & Cards -->
     <div class="row">
-        <!-- Col mit Liste -->
+        <!-- Col mit Menü -->
         <div class="col-2">
-            <ul class="list-group">
-                <li class="list-group-item sidebarHauptelement"> Login </li>
-                <li class="list-group-item sidebarHauptelement"> Projekte </li>
-                <li class="list-group-item sidebarHauptelement"> Aktuelles Projekt </li>
-                <li class="list-group-item sidebarUnterelement"> Reiter </li>
-                <li class="list-group-item sidebarUnterelement"> Aufgaben </li>
-                <li class="list-group-item sidebarUnterelement"> Mitglieder </li>
-            </ul>
+            <!-- Ausgelagertes Menü mit Style -->
+            <?php include('Menu.php'); ?>
         </div>
         <!-- Col mit Card 1 -->
         <div class="col">
