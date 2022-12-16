@@ -36,6 +36,15 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Login::index');
+$routes->get('/login', 'Login::index'); // login soll trotzdem einen normalen Pfad haben
+
+// Hier sind meine eigenen Routen, alles außer Startseite
+$routes->get('/aufgaben', 'Aufgaben::index');
+$routes->get('/reiter', 'Reiter::index');
+$routes->get('/personen', 'Personen::index');
+$routes->get('/projekte', 'Projekte::index');
+$routes->get('/aktuellesProjekt', 'AktuellesProjekt::index');
+
 
 /*
  * --------------------------------------------------------------------

@@ -30,9 +30,10 @@
                     <p>
                         Noch nicht registriert? <a href="" style="text-decoration: none">Registrierung</a>
                     </p>
-                   <!-- <p>
-                        Da der Login Vorgang technisch noch nicht realisiert wurde: <a href="ToDoList.php" style="text-decoration: none">Zur ToDoListe</a>
+                    <p>
+                        Da der Login Vorgang technisch noch nicht realisiert wurde: <a href="aktuellesProjekt" style="text-decoration: none">Zur ToDoListe</a>
                     </p>
+                    <!--
                     <p>
                         Hier geht es zur Ausgabe der Datenbankabfragen: <a href="Datenbankabfragen.php" style="text-decoration: none">klick mich</a>
                     </p>-->
