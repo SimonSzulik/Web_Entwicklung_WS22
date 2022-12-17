@@ -1,12 +1,4 @@
-<!-- Oberster Div Container mit Text -->
-<div class="container-fluid">
-    <div class="text-center bg-light mt-3 mb-3 p-5">
-        <h1>Aufgabenplaner: Login</h1>
-    </div>
-    <!-- Oberster Row Container -->
-    <div class="row pt-3">
-        <!-- Col -->
-        <div class="col-lg-3 p-3"></div>
+ <!-- Col -->
         <div class="col">
             <!-- Row -->
             <div class="row">
@@ -39,6 +31,6 @@
                     </p>-->
                 </div>
             </div>
-        </div>
+ <!-- diese beiden divs kommen aus dem header und werden hier geschlossen -->
     </div>
-</div>
+ </div>

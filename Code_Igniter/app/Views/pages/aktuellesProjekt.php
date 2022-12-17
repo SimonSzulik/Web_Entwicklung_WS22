@@ -1,16 +1,4 @@
-<!-- Oberster Div Container mit Text -->
-<div class="container-fluid">
-    <div class="text-center bg-light mt-3 mb-3 p-5">
-        <h1>Aufgabenplaner: Todos (Aktuelles Projekt)</h1>
-    </div>
-    <!-- Row Container mit Menü & Cards -->
-    <div class="row">
-        <!-- Col mit Menü -->
-        <div class="col-2">
-            <!-- Ausgelagertes Menü mit Style -->
-            <?php include('menu.php'); ?>
-        </div>
-        <!-- Col mit Card 1 -->
+     <!-- Col mit Card 1 -->
         <div class="col">
             <div class="card">
                 <div class="card-header">ToDo:</div>
@@ -39,5 +27,6 @@
                 </ul>
             </div>
         </div>
+<!-- diese beiden divs kommen aus dem header und werden hier geschlossen -->
     </div>
 </div>

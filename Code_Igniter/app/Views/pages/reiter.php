@@ -1,16 +1,4 @@
-<!-- Oberster Div Container mit Text -->
-<div class="container-fluid">
-    <div class="text-center bg-light mt-3 mb-3 p-5">
-        <h1>Aufgabenplaner: Reiter</h1>
-    </div>
-    <!-- Row Container mit Menü & Einlogitems -->
-    <div class="row">
-        <!-- Col mit Menü -->
-        <div class="col-2">
-            <!-- Ausgelagertes Menü mit Style -->
-            <?php include('menu.php'); ?>
-        </div>
-        <!-- Col mit Reiter Sachen -->
+ <!-- Col mit Reiter Sachen -->
         <div class="col">
             <!-- Reihe mit Tabelle  -->
             <div class="row">
@@ -43,7 +31,6 @@
                 </form>
             </div>
         </div>
-    </div>
+ <!-- diese beiden divs kommen aus dem header und werden hier geschlossen -->
+ </div>
 </div>
-</body>
-</html>
