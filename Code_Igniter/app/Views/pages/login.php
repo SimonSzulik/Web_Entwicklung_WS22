@@ -30,6 +30,9 @@
                         Hier geht es zur Ausgabe der Datenbankabfragen: <a href="Datenbankabfragen.php" style="text-decoration: none">klick mich</a>
                     </p>-->
                 </div>
+                <!-- leere col zum formatieren der Eingabefelder-->
+                <div class="col">
+                </div>
             </div>
  <!-- diese beiden divs kommen aus dem header und werden hier geschlossen -->
     </div>

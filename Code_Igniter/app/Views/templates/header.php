@@ -16,7 +16,7 @@
     <!-- Row Container mit Menü ganz links -->
     <div class="row">
         <!-- Col mit Menü -->
-        <div class="col-2">
+        <div class="col-3">
             <!-- Ausgelagertes Menü -->
             <?php if ($title != "Login"){
                 include('menu.php');} ?>

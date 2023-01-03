@@ -16,7 +16,17 @@
                         </thead>
                         <!-- Inhalt der Tabelle mit Hilfe von Array -->
                         <tbody>
-
+                        <?php if (isset($mitglieder)): foreach ($mitglieder as $item): ?>
+                            <tr>
+                                <td><?= isset($item['name']) ? $item['name'] : '' ?></td>
+                                <td><?= isset($item['email']) ? $item['email'] : '' ?></td>
+                                <td><?php if(isset($item['inProjekt']) && $item['inProjekt']){$item['state'] = 'checked';} else{$item['state'] = 'unchecked';} ?><?= isset($item['inProjekt']) ? '<input class="form-check-input" type="checkbox"'.$item['state'].'>' : '' ?></td>
+                                <td class="text-right">
+                                    <button type="submit" class="btn btn-link" value="<?= isset($item['id']) ? $item['id'] : '' ?>"><i class="far fa-edit"></i></button>
+                                    <button type="submit" class="btn btn-link" value="<?= isset($item['id']) ? $item['id'] : '' ?>"><i class="far fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        <?php endforeach; endif; ?>
                         </tbody>
                     </table>
                     <!-- Überschrift, Eingabefelder & 2 Knöpfe-->
