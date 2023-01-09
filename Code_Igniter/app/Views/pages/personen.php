@@ -20,7 +20,7 @@
                             <tr>
                                 <td><?= isset($item['Username']) ? $item['Username'] : '' ?></td>
                                 <td><?= isset($item['EMail']) ? $item['EMail'] : '' ?></td>
-                                <td><?php if(isset($item['inProjekt']) && $item['inProjekt']){$item['state'] = 'checked';} else{$item['state'] = 'unchecked';} ?><?= isset($item['inProjekt']) ? '<input class="form-check-input" type="checkbox"'.$item['state'].'>' : '' ?></td>
+                                <td><?php if(isset($item['inProjekt']) && $item['inProjekt'] == 'Y'){$item['state'] = 'checked';} else{$item['state'] = 'unchecked';} ?><?= isset($item['inProjekt']) ? '<input class="form-check-input" type="checkbox"'.$item['state'].'>' : '' ?></td>
                                 <td class="text-right">
                                     <button type="submit" class="btn btn-link" value="<?= isset($item['Id']) ? $item['Id'] : '' ?>"><i class="far fa-edit"></i></button>
                                     <button type="submit" class="btn btn-link" value="<?= isset($item['Id']) ? $item['Id'] : '' ?>"><i class="far fa-trash-alt"></i></button>
