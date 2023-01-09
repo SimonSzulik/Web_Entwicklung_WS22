@@ -13,7 +13,20 @@
                         </tr>
                         <!-- Inhalt der Tabelle mit Hilfe von Array -->
                         <tbody>
-
+                        <?php if (isset($reiter)): foreach ($reiter as $item): ?>
+                            <tr>
+                                <td><?= isset($item['Name']) ? $item['Name'] : '' ?></td>
+                                <td><?= isset($item['Beschreibung']) ? $item['Beschreibung'] : '' ?></td>
+                                <td class="text-right">
+                                    <button type="submit" class="btn btn-link"
+                                            value="<?= isset($item['Id']) ? $item['Id'] : '' ?>"><i
+                                                class="far fa-edit"></i></button>
+                                    <button type="submit" class="btn btn-link"
+                                            value="<?= isset($item['Id']) ? $item['Id'] : '' ?>"><i
+                                                class="far fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        <?php endforeach; endif; ?>
                         </tbody>
                     </table>
                     <!-- Überschrift, Eingabefelder & 2 Knöpfe-->

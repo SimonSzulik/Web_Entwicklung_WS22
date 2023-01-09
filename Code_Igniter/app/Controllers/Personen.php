@@ -5,7 +5,6 @@ use App\Models\personenModel;
 
 class Personen extends BaseController
 {
-
     public function index()
     {
         $data['title'] = "Mitglieder";

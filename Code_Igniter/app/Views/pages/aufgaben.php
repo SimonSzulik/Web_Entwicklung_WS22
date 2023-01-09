@@ -17,6 +17,18 @@
                         </thead>
                         <!-- Inhalt der Tabelle mit Hilfe von Array -->
                         <tbody>
+                        <?php if (isset($aufgaben)): foreach ($aufgaben as $item): ?>
+                            <tr>
+                                <td><?= isset($item['Name']) ? $item['Name'] : '' ?></td>
+                                <td><?= isset($item['Beschreibung']) ? $item['Beschreibung'] : '' ?></td>
+                                <td><?= isset($item['ReiterId']) ? $item['ReiterId'] : '' ?></td>
+                                <td><?= isset($item['ErstellerId']) ? $item['ErstellerId'] : '' ?></td>
+                                <td class="text-right">
+                                    <button type="submit" class="btn btn-link" value="<?= isset($item['id']) ? $item['id'] : '' ?>"><i class="far fa-edit"></i></button>
+                                    <button type="submit" class="btn btn-link" value="<?= isset($item['id']) ? $item['id'] : '' ?>"><i class="far fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        <?php endforeach; endif; ?>
                         </tbody>
                     </table>
                     <!-- Überschrift, Eingabefelder & 2 Knöpfe & Dropdown Menüs für Auswahl von Reitern und Personen -->
