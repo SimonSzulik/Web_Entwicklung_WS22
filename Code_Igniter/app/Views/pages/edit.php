@@ -22,8 +22,8 @@
                                 <td><?= isset($item['EMail']) ? $item['EMail'] : '' ?></td>
                                 <td><?php if(isset($item['inProjekt']) && $item['inProjekt'] == 'Y'){$item['state'] = 'checked';} else{$item['state'] = 'unchecked';} ?><?= isset($item['inProjekt']) ? '<input class="form-check-input" type="checkbox"'.$item['state'].'>' : '' ?></td>
                                 <td class="text-right">
-                                    <button type="submit" class="btn btn-link" value="<?= isset($item['Id']) ? $item['Id'] : '' ?>"><i class="far fa-edit"></i></button>
-                                    <button type="submit" class="btn btn-link" value="<?= isset($item['Id']) ? $item['Id'] : '' ?>"><i class="far fa-trash-alt"></i></button>
+                                    <a href="edit" class='btn text-dark'><i class='fa-regular fa-pen-to-square'></i></a>
+                                    <a href="" class='btn text-dark'><i class='fa-regular fa-trash-can'></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; endif; ?>

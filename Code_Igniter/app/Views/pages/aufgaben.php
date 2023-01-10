@@ -24,6 +24,7 @@
                                 <td><?= isset($item['ReiterId']) ? $item['ReiterId'] : '' ?></td>
                                 <td><?= isset($item['ErstellerId']) ? $item['ErstellerId'] : '' ?></td>
                                 <td class="text-right">
+                                    <i class='fa-regular fa-pen-to-sqaure'></i>
                                     <button type="submit" class="btn btn-link" value="<?= isset($item['id']) ? $item['id'] : '' ?>"><i class="far fa-edit"></i></button>
                                     <button type="submit" class="btn btn-link" value="<?= isset($item['id']) ? $item['id'] : '' ?>"><i class="far fa-trash-alt"></i></button>
                                 </td>

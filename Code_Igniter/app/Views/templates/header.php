@@ -18,6 +18,6 @@
         <!-- Col mit Menü -->
         <div class="col-2">
             <!-- Ausgelagertes Menü -->
-            <?php if ($title != "Login"){
+            <?php if ($title != 'Login' && $title != 'Registrieren'){
                 include('menu.php');} ?>
         </div>

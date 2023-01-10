@@ -1,17 +1,17 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\personenModel;
+use App\Models\mitgliederModel;
 
-class Personen extends BaseController
+class Mitglieder extends BaseController
 {
     public function index()
     {
         $data['title'] = "Mitglieder";
-        $personenModel = new personenModel();
+        $personenModel = new mitgliederModel();
         $data['mitglieder'] = $personenModel->getData();
         echo view('templates/header', $data);
-        echo view('pages/personen', $data);
+        echo view('pages/mitglieder', $data);
         echo view('templates/footer');
     }
 }

@@ -25,7 +25,7 @@ $routes->set404Override();
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
 // Set `$autoRoutesImproved` to true in `app/Config/Feature.php` and set the following to true.
-// $routes->setAutoRoute(false);
+$routes->setAutoRoute(true);
 
 /*
  * --------------------------------------------------------------------
@@ -41,9 +41,11 @@ $routes->get('/login', 'Login::index'); // login soll trotzdem einen normalen Pf
 // Hier sind meine eigenen Routen, alles außer Startseite
 $routes->get('/aufgaben', 'Aufgaben::index');
 $routes->get('/reiter', 'Reiter::index');
-$routes->get('/personen', 'Personen::index');
+$routes->get('/mitglieder', 'Mitglieder::index');
 $routes->get('/projekte', 'Projekte::index');
 $routes->get('/aktuellesProjekt', 'AktuellesProjekt::index');
+$routes->get('/register', 'Register::index');
+$routes->get('/edit', 'Edit::index');
 
 
 /*
