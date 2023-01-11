@@ -14,6 +14,9 @@
                     <input type="password" class="form-control" id="passwort" name="passwort" \>
                 </div>
                 <button id="btnsubmit" type="submit" class="btn btn-primary"> Login </button>
+                <p>
+                    Noch nicht registriert ? <a href="register" > Registrierung </a>
+                </p>
             </div>
             </form>
         </div>

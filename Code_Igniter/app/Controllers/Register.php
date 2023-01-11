@@ -12,9 +12,9 @@ class Register extends BaseController
     public function index()
     {
         if (!empty($_POST['username']) && !empty($_POST['passwort']) && !empty($_POST['email'])) {
-                $this->mitgliederModel->register();
-                return redirect()->to(base_url() . '/login');
-            }
+            $this->mitgliederModel->register();
+            return redirect()->to(base_url() . '/login');
+        }
         $data['title'] = "Registrieren";
 
         echo view('templates/header', $data);

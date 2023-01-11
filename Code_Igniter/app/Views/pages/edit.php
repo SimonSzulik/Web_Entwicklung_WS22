@@ -16,38 +16,37 @@
                         </thead>
                         <!-- Inhalt der Tabelle mit Hilfe von Array -->
                         <tbody>
-                        <?php if (isset($mitglieder)): foreach ($mitglieder as $item): ?>
-                            <tr>
-                                <td><?= isset($item['Username']) ? $item['Username'] : '' ?></td>
-                                <td><?= isset($item['EMail']) ? $item['EMail'] : '' ?></td>
-                                <td><?php if(isset($item['inProjekt']) && $item['inProjekt'] == 'Y'){$item['state'] = 'checked';} else{$item['state'] = 'unchecked';} ?><?= isset($item['inProjekt']) ? '<input class="form-check-input" type="checkbox"'.$item['state'].'>' : '' ?></td>
-                                <td class="text-right">
-                                    <a href="edit" class='btn text-dark'><i class='fa-regular fa-pen-to-square'></i></a>
-                                    <a href="" class='btn text-dark'><i class='fa-regular fa-trash-can'></i></a>
-                                </td>
-                            </tr>
-                        <?php endforeach; endif; ?>
+                            <td><?= isset($mitglieder['Username']) ? $mitglieder['Username'] : '' ?></td>
+                            <td><?= isset($mitglieder['EMail']) ? $mitglieder['EMail'] : '' ?></td>
+                            <td><?php if(isset($mitglieder['inProjekt']) && $mitglieder['inProjekt'] == 'Y'){$mitglieder['state'] = 'checked';} else{$mitglieder['state'] = 'unchecked';} ?><?= isset($mitglieder['inProjekt']) ? '<input class="form-check-input" type="checkbox"'.$mitglieder['state'].'>' : '' ?></td>
+                            <td class="text-right">
+                                <a href="" class='btn text-dark'><i class='fa-regular fa-pen-to-square'></i></a>
+                                <a href="" class='btn text-dark'><i class='fa-regular fa-trash-can'></i></a>
+                            </td>
                         </tbody>
                     </table>
-                    <!-- Überschrift, Eingabefelder & 2 Knöpfe-->
-                    <h3 class="mt-4">Bearbeiten/Erstellen</h3>
-                    <div class="form-group">
-                        <label for="neuPersonName">Username</label>
-                        <input type="text" id="neuPersonName" name="neuPersonName" class="form-control mt-2 mb-2" placeholder="Username" tabindex="1">
-                        <label for="neuPersonEMail">E-Mail</label>
-                        <input type="text" id="neuPersonEMail" name="neuPersonEMail" class="form-control mt-2 mb-2" placeholder="E-Mail" tabindex="2">
-                        <label for="neuPersonPasswort">Passwort</label>
-                        <input type="password" id="neuPersonPasswort" name="neuPersonPasswort" class="form-control mt-2 mb-2" placeholder="Passwort" tabindex="3">
-                        <div class="form-check mb-3">
-                            <input class="form-check-input mb-3" type="checkbox" value="" id="neuPersonCheck" name="neuPersonCheck" tabindex="4">
-                            <label class="form-check-label" for="neuPersonCheck">Dem Projekt zugeordnet</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary" tabindex="5">Speichern</button>
-                        <button type="submit" class="btn btn-info ms-1" tabindex="6">Reset</button>
-                    </div>
                 </form>
             </div>
+            <!-- Überschrift, Eingabefelder & 2 Knöpfe-->
+            <div class="container mt-5 mb-5">
+                    <div class="col-8 card ps-0 pe-0">
+                        <?= form_open('edit', array('role' => 'form')) ?>
+                        <legend class="card-header"> Bearbeiten </legend>
+                        <div class="card-body">
+                            <div class="form-group pb-2">
+                                <label for="username"> Username: </label>
+                                <input type="text" class="form-control" id="username" name="username" \>
+                            </div>
+                            <div class="form-group pb-2">
+                                <label for="email"> Email: </label>
+                                <input type="email" class="form-control" id="email" name="email" \>
+                            </div>
+                            <div class="form-group pb-2">
+                                <label for="passwort"> Password: </label>
+                                <input type="password" class="form-control" id="passwort" name="passwort" \>
+                            </div>
+                            <button id="btnsubmit" type="submit" class="btn btn-primary"> Daten Ändern </button>
+                        </div>
+            </form>
         </div>
- <!-- diese beiden divs kommen aus dem header und werden hier geschlossen -->
- </div>
 </div>

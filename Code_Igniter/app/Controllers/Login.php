@@ -17,7 +17,7 @@ class Login extends BaseController
                 if(password_verify($_POST['passwort'], $passwort)){
                     $this->session->set('loggedin', True);
                     $mitgliedInfos = $this->mitgliederModel->mitgliedInfos();
-                    $_SESSION = $mitgliedInfos;
+                    $_SESSION['mitgliedInfos'] = $mitgliedInfos;
                     return redirect()->to(base_url() . '/aktuellesProjekt');
                 }
             }

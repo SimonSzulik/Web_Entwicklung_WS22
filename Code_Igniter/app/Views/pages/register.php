@@ -10,12 +10,12 @@
                     <input type="text" class="form-control" id="username" name="username" \>
                 </div>
                 <div class="form-group pb-2">
-                    <label for="passwort"> Password: </label>
-                    <input type="password" class="form-control" id="passwort" name="passwort" \>
-                </div>
-                <div class="form-group pb-2">
                     <label for="email"> Email: </label>
                     <input type="email" class="form-control" id="email" name="email" \>
+                </div>
+                <div class="form-group pb-2">
+                    <label for="passwort"> Password: </label>
+                    <input type="password" class="form-control" id="passwort" name="passwort" \>
                 </div>
                 <button id="btnsubmit" type="submit" class="btn btn-primary"> Registrieren </button>
             </div>
