@@ -11,21 +11,34 @@ class Login extends BaseController
 
     public function index()
     {
-        if (!empty($_POST['username']) && !empty($_POST['passwort'])) {
-            if($this->mitgliederModel->login() != NULL){
-                $passwort = $this->mitgliederModel->login()['Password'];
-                if(password_verify($_POST['passwort'], $passwort)){
-                    $this->session->set('loggedin', True);
-                    $mitgliedInfos = $this->mitgliederModel->mitgliedInfos();
-                    $_SESSION['mitgliedInfos'] = $mitgliedInfos;
-                    return redirect()->to(base_url() . '/aktuellesProjekt');
+        if (isset($_POST['username']) && isset($_POST['password'])){
+            if($this->validation->run($_POST, 'userlogin')){
+                if($this->mitgliederModel->login() != NULL){
+                    $password = $this->mitgliederModel->login()['Password'];
+                    if(password_verify($_POST['password'],$password)){
+                        $user = array(
+                            'logged' => TRUE,
+                            'id' => $this->mitgliederModel->login()['Id'],
+                            'username' => $this->mitgliederModel->login()['Username'],
+                            'email' => $this->mitgliederModel->login()['EMail']
+                        );
+                        $this->session->set($user);
+                        return redirect()->to(base_url().'/aktuellesProjekt');
+                    }
+                }else{
+                    $data['error'] = $this->validation->getErrors();
                 }
             }
         }
         $data['title'] = "Login";
 
         echo view('templates/header', $data);
-        echo view('pages/login');
+        echo view('pages/login', $data);
         echo view('templates/footer');
+    }
+
+    public function logout(){
+        $this->session->destroy();
+        return redirect()->to(base_url().'/login');
     }
 }

@@ -1,25 +1,34 @@
-<div class="container mt-5 mb-5">
-    <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6 card ps-0 pe-0">
-            <?= form_open('login', array('role' => 'form')) ?>
-            <legend class="card-header"> Login </legend>
-            <div class="card-body">
-                <div class="form-group pb-2">
-                    <label for="username"> Username: </label>
-                    <input type="text" class="form-control" id="username" name="username" \>
+<div class="row">
+    <?php if (isset($_SESSION['registriert'])){
+        include('erfolgereich_registriert.php');
+    } ?>
+    <div class="col-md-3"></div>
+    <div id="hauptkomponente" class="col-md-6">
+
+        <?= form_open('login/index', array('role' => 'form')) ?>
+        <legend class="card-header">Login</legend>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="username">Benutzername</label>
+                <input type="text" class="form-control <?php if(isset($error['username'])){ echo 'is-invalid';} ?>" id="username" name="username" />
+                <div class="invalid-feedback">
+                    <?= (isset($error['username']))?$error['username']:'' ?>
                 </div>
-                <div class="form-group pb-2">
-                    <label for="passwort"> Password: </label>
-                    <input type="password" class="form-control" id="passwort" name="passwort" \>
-                </div>
-                <button id="btnsubmit" type="submit" class="btn btn-primary"> Login </button>
-                <p>
-                    Noch nicht registriert ? <a href="register" > Registrierung </a>
-                </p>
             </div>
-            </form>
+            <div class="form-group">
+                <label for="password">Passwort</label>
+                <input type="password" class="form-control <?php if(isset($error['password'])){ echo 'is-invalid';} ?>" id="password" name="password" />
+                <div class="invalid-feedback">
+                    <?= (isset($error['password']))?$error['password']:'' ?>
+                </div>
+            </div>
+            <br />
+            <button id="btnsubmit" type="submit" class="btn btn-primary">Einloggen</button>
+            <p>
+                Noch nicht registriert ? <a href="register" > Registrierung </a>
+            </p>
         </div>
-        <div class="col-3"></div>
+        </form>
     </div>
+    <div class="col-md-3"></div>
 </div>

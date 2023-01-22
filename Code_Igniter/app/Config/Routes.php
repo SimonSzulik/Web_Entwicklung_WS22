@@ -45,8 +45,10 @@ $routes->get('/mitglieder', 'Mitglieder::index');
 $routes->get('/projekte', 'Projekte::index');
 $routes->get('/aktuellesProjekt', 'AktuellesProjekt::index');
 $routes->get('/register', 'Register::index');
-$routes->get('(:any)', 'Edit::index/$1');
+$routes->get('(:num)', 'Edit::index/$1');
 $routes->get('/edit', 'Edit::index');
+$routes->get('/logout', 'Login::logout');
+
 
 
 /*

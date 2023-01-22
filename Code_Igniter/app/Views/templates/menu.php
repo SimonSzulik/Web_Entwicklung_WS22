@@ -1,6 +1,6 @@
 <!-- Menü auf linker Seite mit style elementen-->
 <ul class="list-group">
-    <li class="list-group-item sidebarHauptelement"><a href="<?= base_url() ?>" class="text-decoration-none">Login</a></li>
+    <li class="list-group-item sidebarHauptelement"><a href="logout" class="text-decoration-none">Logout</a></li>
     <li class="list-group-item sidebarHauptelement"><a href="projekte" class="text-decoration-none">Projekte</a></li>
     <li class="list-group-item sidebarHauptelement"><a href="aktuellesProjekt" class="text-decoration-none">Aktuelles Projekt</a></li>
     <li class="list-group-item ms-4 sidebarUnterelement"><a href="reiter" class="text-decoration-none">Reiter</a></li>
