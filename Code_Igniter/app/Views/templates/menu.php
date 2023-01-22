@@ -7,4 +7,3 @@
     <li class="list-group-item ms-4 sidebarUnterelement"><a href="aufgaben" class="text-decoration-none">Aufgaben</a></li>
     <li class="list-group-item ms-4 sidebarUnterelement"><a href="mitglieder" class="text-decoration-none">Mitglieder</a></li>
 </ul>
-
