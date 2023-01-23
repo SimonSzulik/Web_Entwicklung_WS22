@@ -24,35 +24,20 @@ class mitgliederModel extends Model
         return $this->mitglieder->insert(array('Username' => $_POST['username'], 'EMail' => $_POST['email'], 'Password' => $hashed_pw));
     }
 
-    public function getPersonen($mitglieder_id = NULL)
-    {
-        $this->mitglieder = $this->db->table('mitglieder');
-
-        if ($mitglieder_id != NULL){
-            $this->mitglieder->where('mitglieder.Id', $mitglieder_id);
-        }
-
-        $this->mitglieder->orderBy('Username');
-        $result = $this->mitglieder->get();
-
-        if ($mitglieder_id != NULL){
-            return $result->getRowArray();
-        } else{
-            return $result->getResultArray();
-        }
-    }
-
     public function edit($id){
         $this->mitglieder = $this->db->table('mitglieder');
         $this->mitglieder->where('mitglieder.Id', $id);
 
-        if($_POST['password'] != null){
-            $password = $_POST['password'];
+        if($_POST['PasswordNew'] != null){
+            $password = $_POST['PasswordNew'];
             $hashed_pw = password_hash($password, PASSWORD_DEFAULT, ['cost' => 10]);
-            return $this->mitglieder->update(array('Username' => $_POST['username'], 'EMail' => $_POST['email'], 'Password' => $hashed_pw));
-        }else{
-            return $this->mitglieder->update(array('Username' => $_POST['username'], 'EMail' => $_POST['email'], 'Password' => $_POST['password']));
+            return $this->mitglieder->update(array('Username' => $_POST['username'], 'EMail' => $_POST['Email'], 'Password' => $hashed_pw));
         }
+    }
+
+    public function delete_person($id){
+        $sql = 'DELETE FROM mitglieder WHERE mitglieder.Id = '.$id;
+        return $this->db->query($sql);
     }
 
     public function getAlleMitglieder(): array

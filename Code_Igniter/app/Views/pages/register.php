@@ -1,13 +1,13 @@
 <div class="container mt-5 mb-5">
     <div class="row">
-        <?php if ($missingAGB == "noagb") {
-            include('agb_error.php');
-        } ?>
-        <?php if ($missingAGB == "noInput") {
-            include('noInput_error.php');
-        } ?>
         <div class="col-3"></div>
         <div class="col-6 card ps-0 pe-0">
+            <?php if ($missingAGB == "noagb") {
+                include('agb_error.php');
+            } ?>
+            <?php if ($missingAGB == "noInput") {
+                include('noInput_error.php');
+            } ?>
             <?= form_open('register', array('role' => 'form')) ?>
             <legend class="card-header"> Registrieren</legend>
             <div class="card-body">

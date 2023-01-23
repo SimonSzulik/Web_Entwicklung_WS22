@@ -37,11 +37,12 @@ $routes->get('/aufgaben', 'Aufgaben::index');
 $routes->get('/reiter', 'Reiter::index');
 $routes->get('/mitglieder', 'Mitglieder::index');
 $routes->get('/projekte', 'Projekte::index');
+$routes->get('/profil', 'Profil::index');
 $routes->get('/aktuellesProjekt', 'AktuellesProjekt::index');
-$routes->get('/register', 'Register::index');
-$routes->get('(:num)', 'Edit::index/$1');
-$routes->get('/edit', 'Edit::index');
+$routes->get('/profile', 'Profil::index');
 $routes->get('/logout', 'Login::logout');
+$routes->get('/delete_and_logout', 'Login::delete_and_logout');
+$routes->get('/register', 'Register::index');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
