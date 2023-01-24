@@ -24,6 +24,10 @@
         <div class="col-2">
             <!-- Ausgelagertes Menü -->
             <?php if ($title != 'Login' && $title != 'Registrieren') {
-                include('menu.php');
+                if (empty($_SESSION['projekt'])){
+                    include('smallmenu.php');
+                }else{
+                    include('menu.php');
+                }
             } ?>
         </div>

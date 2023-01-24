@@ -7,7 +7,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Möchtest du deinen Account wirklich aus der Datenbank entfernen ?
+                Möchtest du deinen Account wirklich aus der Datenbank entfernen?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zurück zum Profil</button>
@@ -27,7 +27,7 @@
                 Den Account wurde gelöscht und du wirst zum Login weitergeleitet.
             </div>
             <div class="modal-footer">
-                <a href="delete_and_logout" class="btn btn-danger mb-2" type="submit" value="button" name="logout" id="logout"><i class="fa-solid fa-right-from-bracket"></i>Löschen </a>
+                <a href="delete_and_logout" class="btn btn-danger mb-2" type="submit" value="button" name="logout" id="logout"><i class="fa-solid fa-right-from-bracket"></i>Ok </a>
             </div>
         </div>
     </div>
