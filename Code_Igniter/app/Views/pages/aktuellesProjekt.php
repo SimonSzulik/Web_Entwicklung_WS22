@@ -7,7 +7,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Möchtest du das Projekt wirklich löschen?
+                Möchtest du das Projekt: "<?= $_SESSION['projekt']['Name'] ?>" wirklich löschen?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zurück zum Projekt</button>
@@ -37,7 +37,7 @@
      <!-- Col mit Card 1 -->
      <div class='col'>
          <button class="btn btn-danger mb-2" data-bs-toggle="modal" data-bs-target="#deleteModal" type="submit" value="button" name="btndelete" id="btndelete"><i class="far fa-trash-alt"></i>&nbsp;Löschen</button>
-         <button class="btn btn-primary mb-2" type="submit" value="button" name="btnedit" id="btnedit"><i class="far fa-edit"></i>&nbsp;Bearbeiten</button>
+         <a href="edit_projekt" class="btn btn-primary mb-2" type="submit" value="button" name="btnedit" id="btnedit"><i class="far fa-edit"></i>&nbsp;Bearbeiten</a>
          <div class="row">
          <div class="col">
             <div class="card">

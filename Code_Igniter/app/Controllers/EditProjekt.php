@@ -3,7 +3,7 @@
 namespace App\Controllers;
 use App\Models\projektModel;
 
-class NewProjekt extends BaseController
+class EditProjekt extends BaseController
 {
     public function __construct()
     {
@@ -14,15 +14,17 @@ class NewProjekt extends BaseController
     {
         if (empty($_POST['neuProjektName']) || empty($_POST['neuProjektBeschreibung'])){
             $data['projektfilled'] = "yes";
+            $data['title'] = "Projekt bearbeiten";
 
-            $data['title'] = "Neues Projekt";
             echo view('templates/header', $data);
-            echo view('pages/newProjekt');
+            echo view('pages/projekt_edit', $data);
             echo view('templates/footer');
         }else{
-            $this->projektModel->setProjekt();
-            return redirect()->to(base_url() . '/Projekte');
+            $_SESSION['projekt']['Beschreibung'] = $_POST['neuProjektBeschreibung'];
+            $_SESSION['projekt']['Name'] = $_POST['neuProjektName'];
+
+            $this->projektModel->editProjekt($_SESSION['projekt']['Id']);
+            return redirect()->to(base_url() . '/aktuellesProjekt');
         }
     }
-
 }

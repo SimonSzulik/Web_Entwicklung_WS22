@@ -12,6 +12,14 @@ class projektModel extends Model
         return $this->projekte->insert(array('Name' => $_POST['neuProjektName'], 'Beschreibung' => $_POST['neuProjektBeschreibung'], 'ErstellerId' => $_SESSION['Id'] ));
     }
 
+    public function editProjekt($id)
+    {
+        $this->projekte = $this->db->table('projekte');
+        $this->projekte->where('projekte.Id', $id);
+
+        return $this->projekte->update(array('Id' => $id, 'Name' => $_POST['neuProjektName'], 'Beschreibung' => $_POST['neuProjektBeschreibung'], 'ErstellerId' => $_SESSION['Id']));
+    }
+
     public function getAlleProjekte(): array{
         // alle projekte bekommen
         $result = $this->db->query('SELECT * FROM projekte ORDER BY Id');

@@ -15,7 +15,7 @@ class Projekte extends BaseController
 
         $projektModel = new projektModel();
         $data['projekte'] = $projektModel->getAlleProjekte();
-        $data['title'] = "Projekte";
+        $data['title'] = "Projekt";
 
         if (!empty($_GET['selectProjekt'])){
             $aktuelles_Projekt = $projektModel->getProjekt($_GET['selectProjekt']);
@@ -33,4 +33,19 @@ class Projekte extends BaseController
         return redirect()->to(base_url().'/projekte');
     }
 
+    public function edit_project()
+    {
+        if (empty($_POST['neuProjektName']) || empty($_POST['neuProjektBeschreibung'])){
+            $data['projektfilled'] = "yes";
+            $data['title'] = "Projekt bearbeiten";
+
+            echo view('templates/header', $data);
+            echo view('pages/projekt_edit', $data);
+            echo view('templates/footer');
+        }else{
+            var_dump($_SESSION['projekt']);
+            //$this->projektModel->editProjekt($_SESSION['projekt']['Id']);
+          //  return redirect()->to(base_url() . '/Projekte');
+        }
+    }
 }

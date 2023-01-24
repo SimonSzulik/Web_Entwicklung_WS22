@@ -45,6 +45,7 @@ $routes->get('/delete_and_logout', 'Login::delete_and_logout');
 $routes->get('/register', 'Register::index');
 $routes->get('/newProjekt', 'NewProjekt::index');
 $routes->get('/project_delete', 'Projekte::delete_project');
+$routes->get('/edit_projekt', 'EditProjekt::index');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
