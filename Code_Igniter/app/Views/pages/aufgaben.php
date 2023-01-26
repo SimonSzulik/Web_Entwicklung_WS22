@@ -1,11 +1,16 @@
- <!-- Col mit Reiter Sachen -->
+<?php
+
+use App\Models\aufgabenModel;
+
+?>
+<!-- Col mit Reiter Sachen -->
         <div class="col">
             <!-- Reihe mit Tabelle  -->
             <a href="newAufgabe" class="btn btn-primary mb-2" type="submit" value="button" name="btnNeu" id="btnNeu"><i
                         class="fas fa-plus-square"></i>&nbsp;Neu</a>
             <div class="row">
                 <!-- Form -->
-                <form class="form-group">
+                <form action="<?= base_url()?>/EditAufgaben" method="post" class="form-group">
                     <!-- Tabelle -->
                     <table class="table table-hover">
                         <thead>
@@ -13,6 +18,7 @@
                             <th scope="col">AufgabenId</th>
                             <th scope="col">Aufgabenbezeichnung</th>
                             <th scope="col">Fällig</th>
+                            <th scope="col">Zuständige</th>
                             <th scope="col">Reiter</th>
                             <th scope="col">Ersteller</th>
                             <th scope="col"></th>
@@ -25,6 +31,18 @@
                                 <td><?= isset($item['Id']) ? $item['Id'] : '' ?></td>
                                 <td><?= isset($item['Name']) ? $item['Name'] : '' ?></td>
                                 <td><?= isset($item['Fälligkeitsdatum']) ? $item['Fälligkeitsdatum'] : '' ?></td>
+                                <td><?php
+                                    $aufgabenModel = new aufgabenModel();
+                                    $personen = $aufgabenModel->getZustaendige($item['Id']);
+
+                                    foreach ($personen as $perso){
+                                       $help = $aufgabenModel->getMitglied($perso['MitgliederId']);
+                                       if (isset($perso)){
+                                           echo($help[0]['Username']. "<br>");
+                                       }
+                                    }
+                                    ?>
+                                </td>
                                 <td>
                                     <?php foreach($reiter as $reit): ?>
                                         <?php

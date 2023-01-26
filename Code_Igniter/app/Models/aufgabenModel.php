@@ -38,7 +38,7 @@ class aufgabenModel extends Model
             'ReiterId' => $_POST['neuReiter']));
     }
 
-    public function getAufgabe($id)
+    public function getAufgabe()
     {
         // get spezifische Aufgabe
         $this->aufgaben = $this->db->table('aufgaben');
@@ -57,5 +57,25 @@ class aufgabenModel extends Model
 
         return $this->aufgaben->update(array('Name' => $_POST['neuAufgabeName'],
             'Beschreibung' => $_POST['neuAufgabeBeschreibung']));
+    }
+
+    public function getZustaendige($id)
+    {
+        // zuständige
+        $this->aufgaben_mitglieder = $this->db->table('aufgaben_mitglieder');
+        $this->aufgaben_mitglieder->select('aufgaben_mitglieder.MitgliederId');
+        $this->aufgaben_mitglieder->where('aufgaben_mitglieder.AufgabenId', $id);
+
+        return $this->aufgaben_mitglieder->get()->getResultArray();
+    }
+
+    public function getMitglied($id)
+    {
+        // mitglied by Id
+        $this->mitglieder = $this->db->table('mitglieder');
+        $this->mitglieder->select('Username');
+        $this->mitglieder->where('mitglieder.Id', $id);
+
+        return $this->mitglieder->get()->getResultArray();
     }
 }
