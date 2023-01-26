@@ -46,6 +46,9 @@ $routes->get('/register', 'Register::index');
 $routes->get('/newProjekt', 'NewProjekt::index');
 $routes->get('/project_delete', 'Projekte::delete_project');
 $routes->get('/edit_projekt', 'EditProjekt::index');
+$routes->get('/newAufgabe', 'NewAufgabe::index');
+$routes->get('/edit_aufgaben', 'EditAufgaben::index');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

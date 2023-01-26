@@ -32,20 +32,4 @@ class Projekte extends BaseController
         $this->session->destroy();
         return redirect()->to(base_url().'/projekte');
     }
-
-    public function edit_project()
-    {
-        if (empty($_POST['neuProjektName']) || empty($_POST['neuProjektBeschreibung'])){
-            $data['projektfilled'] = "yes";
-            $data['title'] = "Projekt bearbeiten";
-
-            echo view('templates/header', $data);
-            echo view('pages/projekt_edit', $data);
-            echo view('templates/footer');
-        }else{
-            var_dump($_SESSION['projekt']);
-            //$this->projektModel->editProjekt($_SESSION['projekt']['Id']);
-          //  return redirect()->to(base_url() . '/Projekte');
-        }
-    }
 }

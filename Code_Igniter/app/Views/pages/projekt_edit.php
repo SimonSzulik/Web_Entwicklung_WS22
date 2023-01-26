@@ -1,7 +1,7 @@
 <!-- Col mit Einlogitems -->
 <div class="col">
     <!-- Überschrift, Eingabefelder & 2 Knöpfe-->
-    <h3 class="mt-4">Projekt bearbeiten</h3>
+    <h3 class="mt-4">Projekt "<?= $_SESSION['projekt']['Name']?>" bearbeiten</h3>
     <?php if ($projektfilled == "yes") {
         include('projekt_error.php');
     } ?>

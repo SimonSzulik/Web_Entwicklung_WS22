@@ -10,6 +10,9 @@ class Aufgaben extends BaseController
         $data['title'] = "Aufgaben";
         $aufgabenModel = new aufgabenModel();
         $data['aufgaben'] = $aufgabenModel->getData();
+        $data['reiter'] = $aufgabenModel->getReiter();
+        $data['alleUser'] = $aufgabenModel->getMitglieder();
+
         echo view('templates/header', $data);
         echo view('pages/aufgaben', $data);
         echo view('templates/footer');
